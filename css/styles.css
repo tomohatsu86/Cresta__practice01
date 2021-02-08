@@ -1,0 +1,554 @@
+@charset "UTF-8";
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 10px;
+  /*IE9以前に対応する*/
+  font-size: 0.625rem;
+  letter-spacing: 0.05em;
+  line-height: 2;
+  color: #141414;
+  font-family: "Roboto", sans-serif;
+}
+
+img {
+  max-width: 100%;
+  vertical-align: bottom;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.section__ttl {
+  font-size: 36px;
+  /*IE9以前に対応する*/
+  font-size: 2.25rem;
+  text-align: center;
+}
+
+.header {
+  width: 100%;
+  height: 74px;
+  background-color: #1B1310;
+  color: #fff;
+  border-bottom: 1px solid #fff;
+  position: fixed;
+  top: 0;
+  z-index: 10;
+}
+
+@media screen and (max-width: 375px) {
+  .header {
+    width: 375px;
+  }
+}
+
+.header__inner {
+  max-width: 1230px;
+  margin: 0 auto;
+  padding: 10px 15px 0 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header__ttl {
+  font-size: 26px;
+  /*IE9以前に対応する*/
+  font-size: 1.625rem;
+}
+
+.nav {
+  font-size: 16px;
+  /*IE9以前に対応する*/
+  font-size: 1rem;
+  margin-left: auto;
+}
+
+@media screen and (max-width: 375px) {
+  .nav {
+    display: none;
+  }
+}
+
+.nav__list {
+  display: inline-block;
+  margin-left: 1vw;
+}
+
+.hamburger-btn {
+  display: none;
+}
+
+@media screen and (max-width: 375px) {
+  .hamburger-btn {
+    display: block;
+    position: relative;
+    width: 25px;
+    height: 16px;
+    margin-right: 4vw;
+    z-index: 20;
+  }
+}
+
+.hamburger-btn__parts {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: white;
+  position: absolute;
+  -webkit-transition: opacity 0.5s, -webkit-transform 0.5s;
+  transition: opacity 0.5s, -webkit-transform 0.5s;
+  transition: transform 0.5s, opacity 0.5s;
+  transition: transform 0.5s, opacity 0.5s, -webkit-transform 0.5s;
+}
+
+.hamburger-btn__parts.-top {
+  top: 0;
+}
+
+.hamburger-btn__parts.-middle {
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.hamburger-btn__parts.-bottom {
+  bottom: 0;
+}
+
+.hamburger-btn.active .hamburger-btn__parts.-top {
+  -webkit-transform: translateY(10px) rotate(-315deg);
+          transform: translateY(10px) rotate(-315deg);
+}
+
+.hamburger-btn.active .hamburger-btn__parts.-middle {
+  -webkit-transform: translateX(200px);
+          transform: translateX(200px);
+}
+
+.hamburger-btn.active .hamburger-btn__parts.-bottom {
+  -webkit-transform: translateY(-4px) rotate(315deg);
+          transform: translateY(-4px) rotate(315deg);
+}
+
+.hamburger {
+  display: none;
+}
+
+@media screen and (max-width: 375px) {
+  .hamburger {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    width: 100vh;
+    height: 100vh;
+    background-color: #1B1310;
+    -webkit-transform: translateX(100vw);
+            transform: translateX(100vw);
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+  }
+  .hamburger__lists {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 100vw;
+    height: 100vh;
+  }
+  .hamburger__list {
+    font-size: 16px;
+    /*IE9以前に対応する*/
+    font-size: 1rem;
+    list-style: none;
+    text-align: center;
+  }
+  .hamburger__list + .hamburger__list {
+    padding-top: 50px;
+  }
+}
+
+.hamburger.active {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+
+.top {
+  height: 90vh;
+  background-image: url(../img/gilles-lambert-pb_lF8VWaPU-unsplash@2x.jpg);
+  background-size: cover;
+  background-position: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+@media screen and (max-width: 375px) {
+  .top {
+    width: 375px;
+    background-image: url(../img/gilles-lambert-pb_lF-1@2x.jpg);
+  }
+}
+
+.top__copy {
+  font-size: 50px;
+  /*IE9以前に対応する*/
+  font-size: 3.125rem;
+  color: #fff;
+  font-weight: normal;
+  border: 2px solid #fff;
+  padding: 34px 42px;
+}
+
+@media screen and (max-width: 375px) {
+  .top__copy {
+    font-size: 30px;
+    /*IE9以前に対応する*/
+    font-size: 1.875rem;
+    font-weight: normal;
+  }
+}
+
+.about__inner {
+  max-width: 1060px;
+  margin: 0 auto;
+  padding: 0 15px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 104px;
+}
+
+.about__ttl {
+  font-size: 36px;
+  /*IE9以前に対応する*/
+  font-size: 2.25rem;
+  text-align: center;
+  font-weight: normal;
+}
+
+.about__copy {
+  font-size: 24px;
+  /*IE9以前に対応する*/
+  font-size: 1.5rem;
+  font-family: "Noto Sans JP", sans-serif;
+  margin-top: 73px;
+}
+
+.about__text {
+  width: 100%;
+  font-size: 14px;
+  /*IE9以前に対応する*/
+  font-size: 0.875rem;
+  font-family: "Noto Sans JP", sans-serif;
+  margin-top: 42px;
+}
+
+.service__inner {
+  max-width: 1060px;
+  margin: 0 auto;
+  padding: 0 15px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 154px;
+}
+
+@media screen and (max-width: 375px) {
+  .service__inner {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin: 50px auto;
+  }
+}
+
+.service__ttl {
+  font-size: 36px;
+  /*IE9以前に対応する*/
+  font-size: 2.25rem;
+  text-align: center;
+  font-weight: normal;
+}
+
+.service__contents {
+  margin-top: 71px;
+}
+
+.service__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 41px;
+}
+
+@media screen and (max-width: 375px) {
+  .service__content {
+    display: block;
+  }
+}
+
+.service .reverse {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+}
+
+.service__img {
+  width: 480px;
+  margin-top: 40px;
+}
+
+.service__img img {
+  width: 100vw;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+@media screen and (max-width: 375px) {
+  .service__img img {
+    width: 345px;
+    height: 150px;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+}
+
+.service__copy {
+  width: 480px;
+}
+
+@media screen and (max-width: 375px) {
+  .service__copy {
+    width: 345px;
+  }
+}
+
+.service__sub-ttl {
+  font-size: 24px;
+  /*IE9以前に対応する*/
+  font-size: 1.5rem;
+  font-family: "Noto Sans JP", sans-serif;
+  margin-bottom: 42px;
+}
+
+@media screen and (max-width: 375px) {
+  .service__sub-ttl {
+    font-size: 20px;
+    /*IE9以前に対応する*/
+    font-size: 1.25rem;
+    width: 345px;
+  }
+}
+
+.service__text {
+  width: 100%;
+  font-size: 14px;
+  /*IE9以前に対応する*/
+  font-size: 0.875rem;
+  font-family: "Noto Sans JP", sans-serif;
+}
+
+@media screen and (max-width: 375px) {
+  .service__text {
+    width: 345px;
+  }
+}
+
+.space {
+  padding: 0 15px;
+}
+
+.news__inner {
+  max-width: 1060px;
+  margin: 0 auto;
+  padding: 0 15px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 154px;
+}
+
+.news__ttl {
+  font-size: 36px;
+  /*IE9以前に対応する*/
+  font-size: 2.25rem;
+  text-align: center;
+  font-weight: normal;
+}
+
+.news__cards {
+  margin-top: 71px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.news__card {
+  width: 320px;
+  -webkit-box-shadow: 0 0 6px 0 rgba(27, 19, 16, 0.4);
+          box-shadow: 0 0 6px 0 rgba(27, 19, 16, 0.4);
+  margin: 40px auto 0;
+}
+
+@media screen and (max-width: 375px) {
+  .news__card {
+    margin-top: 40px;
+  }
+}
+
+.news__card-img {
+  width: 320px;
+  height: 200px;
+}
+
+.news__card-img img {
+  width: 320px;
+  height: 200px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.news__card-text {
+  width: 254px;
+  font-size: 13px;
+  /*IE9以前に対応する*/
+  font-size: 0.8125rem;
+  font-family: Hiragino Kaku Gothic ProN;
+  color: #141414;
+  margin: 25px auto;
+}
+
+.contact__inner {
+  max-width: 730px;
+  margin: 0 auto;
+  padding: 0 15px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 152px;
+}
+
+.contact__ttl {
+  font-size: 24px;
+  /*IE9以前に対応する*/
+  font-size: 1.5rem;
+  letter-spacing: 0.1em;
+  text-align: center;
+  font-weight: bold;
+  font-family: "Noto Sans JP", sans-serif;
+  margin-bottom: 69px;
+}
+
+.contact__form-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 25px;
+}
+
+label {
+  font-size: 16px;
+  /*IE9以前に対応する*/
+  font-size: 1rem;
+  line-height: 1;
+  margin-bottom: 3px;
+}
+
+input, textarea {
+  border: 1px solid #141414;
+  padding: 10px;
+}
+
+.contact__form-send {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.contact__form-btn {
+  width: 235px;
+  height: 59px;
+  border: none;
+  border-radius: 5vh;
+  background-color: #1B1310;
+  color: #fff;
+  font-weight: bold;
+  font-size: 20px;
+  /*IE9以前に対応する*/
+  font-size: 1.25rem;
+  line-height: 1.5;
+  -webkit-box-shadow: 0 0 6px 0 #1b1310;
+          box-shadow: 0 0 6px 0 #1b1310;
+}
+
+.footer {
+  width: 100%;
+  height: 79px;
+  background-color: #1B1310;
+  margin-top: 54px;
+}
+
+.footer__ttl {
+  font-size: 14px;
+  /*IE9以前に対応する*/
+  font-size: 0.875rem;
+  color: #fff;
+  text-align: center;
+  padding-top: 31px;
+}
+/*# sourceMappingURL=styles.css.map */
